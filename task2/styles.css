@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007BFF; /* Синий цвет для шапки */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.description-container {
+    flex: 1; /* Занимает оставшееся пространство */
+    margin-right: 20px; /* Отступ между текстом и изображением */
+}
+
+.image-container {
+    flex: 0 0 auto; /* Фиксированная ширина для изображения */
+}
+
+.pizza-image {
+    width: 300px; /* Фиксированная ширина изображения */
+    height: 200px; /* Фиксированная высота изображения */
+}
+
+footer {
+    text-align: center;
+    font-size: 12px; /* Мелкий шрифт */
+    margin-top: 20px; /* Отступ сверху */
+    padding: 10px 0;
+}
