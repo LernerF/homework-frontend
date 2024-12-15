@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас</title>
+    <link rel="stylesheet" href="{% static 'main/css/about.css' %}">
+</head>
+<body>
+    
+    <header>
+        <a href="/" class="logo">Pizza</a>
+        <nav>
+            <ul>
+                <li><a href="/contact">Контакты</a></li>
+                <li><a href="#">Отзывы</a></li>
+                <li><a href="/about">О нас</a></li>
+                <li><a href="#">Меню &Assign;</a>
+                    <ul>
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'user_profile' %}">Личный кабинет</a>
+                        {% else %}
+                            <a href="{% url 'login' %}">Вход</a>
+                            <a href="{% url 'register' %}">Регистрация</a>
+                        {% endif %}
+                        <li><a href="#">Промокоды</a></li>
+                        <li><a href="{% url 'order_history' %}">История заказов</a></li>
+                        {% if user.is_authenticated %}
+                            <li><a href="#">Выйти</a></li>
+                        {% endif %}
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="description-container">
+            <h2>О нашем сервисе доставки пиццы</h2>
+            <p>Pizza предлагает вам самую вкусную и горячую пиццу в городе! Мы используем только свежие и качественные ингредиенты для наших блюд. Наша команда профессиональных поваров и курьеров заботится о том, чтобы вы получили свою пиццу быстро и вовремя.</p>
+            <p>Наше меню включает разнообразные виды пиццы, начиная от классических маргариты и пепперони, до уникальных авторских рецептов. Мы также предлагаем возможность создания собственной пиццы, чтобы удовлетворить все ваши вкусовые предпочтения.</p>
+            <p>Заказывайте у нас и наслаждайтесь вкусной пиццей в любое время дня и ночи! Мы работаем 24/7, чтобы вы могли наслаждаться любимым блюдом в любое время.</p>
+        </div>
+        <div class="image-container">
+            <img src="{% static 'main/images/pizza.jpg' %}" alt="Пицца" class="pizza-image">
+        </div>
+    </main>
+
+    <footer>
+        <p>Все права защищены.</p>
+    </footer>
+
+</body>
+</html>
